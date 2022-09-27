@@ -1,0 +1,32 @@
+#fuente{
+font-family: Nunito;
+}
+.rgb::after{
+  content: "";
+  background: linear-gradient(45deg,
+  #ff0000 0%,
+  #ff9a00 10%,
+  #d0de21 20%,
+  #4fdc4a 30%,
+  #3fdad8 40%,
+  #2fc9e2 50%,
+  #1c7fee 60%,
+  #5f15f2 70%,
+  #ba0cf8 80%,
+  #fb07d9 90%,
+  #ff0000 100%
+  )
+  repeat 0% 0% / 300% 100%;
+  position: absolute;
+  inset: -10px;
+  border-radius: 16px;
+  filter: blur(8px);
+  z-index: -1;
+  animation: rgb 6s linear infinite;
+}
+
+@keyframes rgb {
+  0% {background-position: 0% 50% ;}
+  50% {background-position: 100% 50% ;}
+  100% {background-position: 0% 50% ;}
+}

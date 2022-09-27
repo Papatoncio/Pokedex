@@ -1,0 +1,35 @@
+
+<div class="card rgb rounded-5 ms-4 me-4">
+  <div class="card bg-dark rounded-5">
+    <div class="card-header">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png"
+        class="card-img-top p-2 mx-auto d-block"
+        style="
+          width: 20rem;
+        "
+      />
+    </div>
+    <div class="card-body">
+      <h1 class="card-title text-center">PokeRegistro</h1>
+      <form class="ps-5 pe-5">
+        <fieldset>
+          <div class="form-group">
+            <label class="form-label mt-4">PokeUsuario</label>
+            <input type="text" [(ngModel)]="usuario.usuario" name="usuario" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label mt-4">PokeCorreo</label>
+            <input type="email" [(ngModel)]="usuario.correo" name="correo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo electrónico con nadie más.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1" class="form-label mt-4">PokeContraseña</label>
+            <input type="password" [(ngModel)]="usuario.password" name="password" class="form-control" id="exampleInputPassword1" required>
+          </div>
+          <button type="submit" class="btn btn-light mt-4 mb-4" (click)="saveUsuario()">PokeRegistrarse</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
