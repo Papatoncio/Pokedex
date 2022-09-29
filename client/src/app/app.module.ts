@@ -9,7 +9,8 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { PokeappComponent } from './components/pokeapp/pokeapp.component';
 import { UsuariosService } from './services/usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,11 +24,11 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [
-    UsuariosService
-  ],
+  providers: [UsuariosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

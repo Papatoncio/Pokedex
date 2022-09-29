@@ -23,18 +23,4 @@ export class RegistroComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveUsuario(){
-    console.log(this.usuario);
-    this.usuarioService.saveUsuario(this.usuario)
-    .subscribe(
-      resp => {
-        console.log(resp);
-        this.router.navigate(['/login'])
-      },
-      err => {
-        console.log(err);
-      }
-    )
-  }
-
 }

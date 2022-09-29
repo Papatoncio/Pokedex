@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from './services/login.service';
+import { UsuariosService } from './services/usuarios.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'client';
+
+  constructor(private router:Router, private login:LoginService, private service:UsuariosService){
+    this.service.saveUsuario();
+    if (!login.isLogin) {
+      this.router.navigate(["login"]);
+    }
+  }
 }
