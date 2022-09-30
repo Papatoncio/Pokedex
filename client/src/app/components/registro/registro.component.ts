@@ -29,7 +29,8 @@ export class RegistroComponent implements OnInit {
     .subscribe(
       resp => {
         console.log(resp);
-        this.router.navigate(['/login'])
+        this.router.navigate(['login'])
+        window.location.reload();
       },
       err => {
         console.log(err);
