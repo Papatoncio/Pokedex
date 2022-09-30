@@ -11,6 +11,7 @@ export class UsuariosService {
   usuario:Usuario[];
 
   API_URI = 'http://localhost:3000/api/usuarios'
+  API_URl = 'http://localhost:3000/api'
 
   constructor(private http: HttpClient) {
 
@@ -24,12 +25,16 @@ export class UsuariosService {
     return this.http.get(`${this.API_URI}/usuarios/${id}`);
   }
 
-  saveUsuario(){
+  savesUsuario(){
     this.getUsuarios().subscribe(async data => {
       this.usuario = data;
     })
 
     console.log(this.usuario)
+  }
+
+  saveUsuario(usuario: Usuario){
+    return this.http.post(`${this.API_URl}/usuarios`, usuario);
   }
 
   deleteUsuario(id: string){

@@ -12,7 +12,7 @@ export class AppComponent {
   title = 'client';
 
   constructor(private router:Router, private login:LoginService, private service:UsuariosService){
-    this.service.saveUsuario();
+    this.service.savesUsuario();
     if (!login.isLogin) {
       this.router.navigate(["login"]);
     }
