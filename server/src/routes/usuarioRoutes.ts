@@ -1,4 +1,4 @@
-import { response, Router } from "express";
+import { Router } from "express";
 import usuarioController from "../controllers/usuarioControllers";
 
 class UsuarioRoutes {

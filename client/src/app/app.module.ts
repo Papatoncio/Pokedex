@@ -11,6 +11,7 @@ import { UsuariosService } from './services/usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GeoComponent } from './components/geo/geo.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavigationComponent,
     LoginComponent,
     RegistroComponent,
-    PokeappComponent
+    PokeappComponent,
+    GeoComponent
   ],
   imports: [
     BrowserModule,
