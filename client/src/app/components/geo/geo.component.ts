@@ -10,11 +10,16 @@ import { HttpClient } from '@angular/common/http';
 export class GeoComponent implements OnInit {
   lat: number;
   lng: number;
-  country: string = '';
-  city: string = '';
-  continent: string = '';
-  region: string = '';
-  cp: number = 0;
+  country: string;
+  city: string;
+  continent: string;
+  region: string;
+  cp: string;
+  security: boolean;
+  ip: string;
+  time: string;
+  flag: string;
+  isp: string;
 
   constructor( private PlacesService: PlacesService, private http: HttpClient) { }
 
@@ -23,12 +28,17 @@ export class GeoComponent implements OnInit {
       console.log(data);
       this.lat = data.latitude;
       this.lng = data.longitude;
-      this.country = data.country_name;
+      this.country = data.country;
       this.city = data.city;
-      this.region = data.region_name;
-      this.continent = data.continent_name;
-      this.cp = data.zip;
-    })
+      this.region = data.region;
+      this.continent = data.continent;
+      this.cp = data.postal_code;
+      this.ip = data.ip_address;
+      this.security = data.security.is_vpn;
+      this.time = data.timezone.current_time;
+      this.flag = data.flag.png;
+      this.isp = data.connection.isp_name;
+    });
   }
 
 }
