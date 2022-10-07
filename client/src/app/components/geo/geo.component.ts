@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./geo.component.css']
 })
 export class GeoComponent implements OnInit {
+  //Variables
   lat: number;
   lng: number;
   country: string;
@@ -24,6 +25,7 @@ export class GeoComponent implements OnInit {
   constructor( private PlacesService: PlacesService, private http: HttpClient) { }
 
   ngOnInit() {
+    //Utiliza el servicio places, para extraer los datos que recopilo Abstract API
     this.PlacesService.getLocation().subscribe(data => {
       console.log(data);
       this.lat = data.latitude;
