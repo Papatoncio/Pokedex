@@ -44,4 +44,5 @@ export class UsuariosService {
   updateUsuario(id: string, updateUsuario: Usuario){
     return this.http.put(`${this.API_URI}/usuarios/${id}`, updateUsuario);
   }
+
 }

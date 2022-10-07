@@ -1,4 +1,15 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+interface Location {
+  latitude: number;
+  longitude: number;
+  country_name:string;
+  region_name:string;
+  city:string,
+  continent_name:string,
+  zip: number,
+}
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +23,7 @@ export class PlacesService {
     return !!this.useLocation;
   }
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.getUserLocation();
    }
 
@@ -31,6 +42,10 @@ export class PlacesService {
         }
       );
     })
+  }
+
+  getLocation(){
+    return this.http.get<Location>('https://ipgeolocation.abstractapi.com/v1/?api_key=ad87c2843ea242eb8213b17393d17974');
   }
 
 }
