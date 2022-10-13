@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadScriptsService } from 'src/app/services/load-scripts.service';
 
 @Component({
   selector: 'app-pokeapp',
@@ -7,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokeappComponent implements OnInit {
 
-  constructor() {
-    
+  constructor(private ldScript: LoadScriptsService) {
+    ldScript.loadScript();
   }
 
   ngOnInit(): void {
-    
+
   }
 
 }
