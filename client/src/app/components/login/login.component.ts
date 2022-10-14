@@ -23,9 +23,9 @@ export class LoginComponent implements OnInit {
   constructor(private service: UsuariosService, private router: Router, private Login:LoginService) { }
   ngOnInit(): void {
   }
-  
-  login() {
-    this.user = this.service.usuario.filter(data => {
+
+  async login() {
+    this.user = await this.service.usuario.filter(data => {
       return data.usuario === this.form.get('usuario')?.value
     })
     if(

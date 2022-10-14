@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { PlacesService } from '../../maps/services/places.service';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { PlacesService } from 'src/app/services/places.service';
+import { Map } from 'mapbox-gl';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -7,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './geo.component.html',
   styleUrls: ['./geo.component.css']
 })
-export class GeoComponent implements OnInit {
+export class GeoComponent implements AfterViewInit {
   //Variables
   lat: number;
   lng: number;
@@ -22,11 +23,17 @@ export class GeoComponent implements OnInit {
   flag: string;
   isp: string;
 
-  constructor( private PlacesService: PlacesService, private http: HttpClient) { }
+  @ViewChild('mapDiv') mapDivElement!: ElementRef
 
-  ngOnInit() {
+  constructor( private placesService: PlacesService, private http: HttpClient) { }
+
+  get isUserLocationRedy(){
+    return this.placesService.isUserLocationReady;
+  }
+
+  ngAfterViewInit(): void {
     //Utiliza el servicio places, para extraer los datos que recopilo Abstract API
-    this.PlacesService.getLocation().subscribe(data => {
+    this.placesService.getLocation().subscribe(data => {
       console.log(data);
       this.lat = data.latitude;
       this.lng = data.longitude;
@@ -41,6 +48,14 @@ export class GeoComponent implements OnInit {
       this.flag = data.flag.png;
       this.isp = data.connection.isp_name;
     });
+    //Mapa de Geolocalizacion
+    const map = new Map({
+      container: this.mapDivElement.nativeElement,
+      style: 'mapbox://styles/mapbox/streets-v11', // style URL
+      center: this.placesService.useLocation,// starting position [lng, lat]
+      zoom: 14, // starting zoom
+    });
+    console.log(this.placesService.isUserLocationReady)
   }
 
 }

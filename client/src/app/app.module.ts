@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GeoComponent } from './components/geo/geo.component';
 import { AgmCoreModule } from '@agm/core';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AgmCoreModule } from '@agm/core';
     LoginComponent,
     RegistroComponent,
     PokeappComponent,
-    GeoComponent
+    GeoComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,11 @@
 h1{
   font-family: Nunito;
 }
+
+.map-container{
+  position: fixed;
+  top: 0px;
+  height: 100vh;
+  right: 0px;
+  width: 100vw;
+}

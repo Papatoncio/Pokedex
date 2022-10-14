@@ -1,39 +1,50 @@
-<h1 align="center">Api Localizacion por IP</h1>
-<br/>
-<table class="table table-hover" >
-  <tbody>
-    <tr class="table-active">
-      <th>País</th><td>{{country}}</td>
-    </tr>
-    <tr class="table-active">
-      <th>Ip</th><td>{{ip}}</td>
-    </tr>
-    <tr class="table-active">
-      <th>Ciudad</th><td>{{city}}</td>
-    </tr>
-    <tr class="table-active">
-      <th>Codigo Postal</th><td>{{cp}}</td>
-    </tr>
-    <tr class="table-active">
-      <th>Región</th><td>{{region}}</td>
-    </tr>
-    <tr class="table-active">
-      <th>Continente</th><td>{{continent}}</td>
-    </tr>
-    <tr class="table-active">
-      <th>Latitud</th><td>{{lat}}</td>
-    </tr>
-    <tr class="table-active">
-      <th>Longitud</th><td>{{lng}}</td>
-    </tr>
-    <tr class="table-active">
-      <th>Hora</th><td>{{time}}</td>
-    </tr>
-    <tr class="table-active">
-      <th>ISP</th><td>{{isp}}</td>
-    </tr>
-    <tr class="table-active">
-      <th>Bandera</th><td><img src="{{flag}}" class="rounded img-fluid"></td>
-    </tr>
-  </tbody>
-</table>
+ <app-loading *ngIf="!isUserLocationRedy; else mapReady"></app-loading>
+<ng-template #mapReady>
+  <br>
+  <div class="card rounded-4">
+    <div class="card-title">
+      <br>
+      <h1 align="center">Api Localizacion por IP</h1>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <tbody>
+          <tr class="table-active">
+            <th>País</th><td>{{country}}</td>
+          </tr>
+          <tr class="table-active">
+            <th>Ip</th><td>{{ip}}</td>
+          </tr>
+          <tr class="table-active">
+            <th>Ciudad</th><td>{{city}}</td>
+          </tr>
+          <tr class="table-active">
+            <th>Codigo Postal</th><td>{{cp}}</td>
+          </tr>
+          <tr class="table-active">
+            <th>Región</th><td>{{region}}</td>
+          </tr>
+          <tr class="table-active">
+            <th>Continente</th><td>{{continent}}</td>
+          </tr>
+          <tr class="table-active">
+            <th>Latitud</th><td>{{lat}}</td>
+          </tr>
+          <tr class="table-active">
+            <th>Longitud</th><td>{{lng}}</td>
+          </tr>
+          <tr class="table-active">
+            <th>Hora</th><td>{{time}}</td>
+          </tr>
+          <tr class="table-active">
+            <th>ISP</th><td>{{isp}}</td>
+          </tr>
+          <tr class="table-active">
+            <th>Bandera</th><td><img src="{{flag}}" class="rounded img-fluid"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ng-template>
+<div #mapDiv class="map-container"></div>

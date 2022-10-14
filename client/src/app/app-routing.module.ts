@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PokeappComponent } from './components/pokeapp/pokeapp.component';
 import { LoginComponent } from './components/login/login.component';
