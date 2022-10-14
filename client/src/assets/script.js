@@ -17,7 +17,7 @@ const typeColors ={
     grass: '#4A9681',
     psychic: '#FFC6D9',
     ghost: '#561D25',
-    bug: '#A2FAA3', 
+    bug: '#A2FAA3',
     poison: '#795663',
     ground: '#D2B074',
     dragon: 'DA627D',
@@ -26,10 +26,10 @@ const typeColors ={
     default: '#2A1A1F'
 };
 
-const searchPokemon = event => {
-    event.preventDefault();
-    const { value } = event.target.pokemon;
-    fetch(`https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}`)
+const searchPokemon = async event => {
+    await event.preventDefault();
+    const { value } = await event.target.pokemon;
+    await fetch(`https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}`)
         .then(data => data.json())
         .then(response => renderPokemonData(response))
         .catch(err => renderNotFound())
