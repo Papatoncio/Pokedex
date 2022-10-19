@@ -5,8 +5,6 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
-import swal from 'sweetalert/typings/core';
 
 @Component({
   selector: 'app-login',

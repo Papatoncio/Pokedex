@@ -3,9 +3,10 @@ h1{
 }
 
 .map-container{
-  position: fixed;
-  top: 0px;
-  height: 100vh;
-  right: 0px;
-  width: 100vw;
+  height: 75vh;
+  width: 80vw;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
