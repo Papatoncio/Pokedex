@@ -11,7 +11,6 @@ import { UsuariosService } from './services/usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GeoComponent } from './components/geo/geo.component';
 import { AgmCoreModule } from '@agm/core';
 import { LoadingComponent } from './components/loading/loading.component';
 
@@ -22,7 +21,6 @@ import { LoadingComponent } from './components/loading/loading.component';
     LoginComponent,
     RegistroComponent,
     PokeappComponent,
-    GeoComponent,
     LoadingComponent
   ],
   imports: [

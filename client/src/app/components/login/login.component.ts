@@ -22,9 +22,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async login() {
-    this.user = await this.service.usuario.filter(data => {
-      return data.usuario === this.form.get('usuario')?.value
+  async login(): Promise<void> {
+    this.user = this.service.usuario.filter(data => {
+      return data.usuario === this.form.get('usuario')?.value;
     })
     if(
       this.user[0] != undefined
