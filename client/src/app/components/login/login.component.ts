@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async login(): Promise<void> {
+  login() {
     this.user = this.service.usuario.filter(data => {
       return data.usuario === this.form.get('usuario')?.value;
     })

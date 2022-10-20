@@ -13,6 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AgmCoreModule } from '@agm/core';
 import { LoadingComponent } from './components/loading/loading.component';
+import { MapScreenComponent } from './components/map-screen/map-screen.component';
+import { MapViewComponent } from './components/map-view/map-view.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { LoadingComponent } from './components/loading/loading.component';
     LoginComponent,
     RegistroComponent,
     PokeappComponent,
-    LoadingComponent
+    LoadingComponent,
+    MapScreenComponent,
+    MapViewComponent
   ],
   imports: [
     BrowserModule,
