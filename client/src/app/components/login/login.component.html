@@ -21,6 +21,9 @@
               <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" title="Ingresar" name="Ingresar">PokeIniciar Sesion</button>
               <br/>
             </div>
+            <div style="text-align: center;" *ngIf="!isLogin">
+              <button type="button" class="loginBtn loginBtn--facebook" (click)="loginWithFacebook()">Login con Facebook</button>
+            </div>
         </form>
         </div>
       </div>
