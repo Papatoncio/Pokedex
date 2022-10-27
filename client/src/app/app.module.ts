@@ -15,6 +15,7 @@ import { AgmCoreModule } from '@agm/core';
 import { LoadingComponent } from './components/loading/loading.component';
 import { MapScreenComponent } from './components/map-screen/map-screen.component';
 import { MapViewComponent } from './components/map-view/map-view.component';
+import { FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -34,11 +35,26 @@ import { MapViewComponent } from './components/map-view/map-view.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    SocialLoginModule,
     AgmCoreModule.forRoot({
-      apiKey:'ad87c2843ea242eb8213b17393d17974'
+      apiKey: 'ad87c2843ea242eb8213b17393d17974'
     })
   ],
-  providers: [UsuariosService],
+  providers: [UsuariosService,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider(
+              '1240578866731098'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
