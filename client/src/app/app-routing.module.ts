@@ -4,7 +4,6 @@ import { PokeappComponent } from './components/pokeapp/pokeapp.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { MapScreenComponent } from './components/map-screen/map-screen.component';
-import { TiendaComponent } from './components/tienda/tienda.component';
 
 const routes: Routes = [
   {
@@ -27,10 +26,6 @@ const routes: Routes = [
   {
     path: 'maps',
     component: MapScreenComponent,
-  },
-  {
-    path: 'tienda',
-    component: TiendaComponent,
   },
 ];
 

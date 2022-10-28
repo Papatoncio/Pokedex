@@ -20,12 +20,6 @@ import {
   SocialAuthServiceConfig,
   SocialLoginModule,
 } from 'angularx-social-login';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
-import { provideAuth, getAuth } from '@angular/fire/auth';
-import { provideFirestore, getFirestore } from '@angular/fire/firestore';
-import { AngularFireModule } from '@angular/fire/compat';
-import { TiendaComponent } from './components/tienda/tienda.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +31,6 @@ import { TiendaComponent } from './components/tienda/tienda.component';
     LoadingComponent,
     MapScreenComponent,
     MapViewComponent,
-    TiendaComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,10 +43,6 @@ import { TiendaComponent } from './components/tienda/tienda.component';
     AgmCoreModule.forRoot({
       apiKey: 'ad87c2843ea242eb8213b17393d17974',
     }),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
-    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [
     UsuariosService,
