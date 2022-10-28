@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pokedex-6b536": {
+      "hosting": {
+        "client": [
+          "pokedex-6b536"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pokedex-6b536"
+  }
+}

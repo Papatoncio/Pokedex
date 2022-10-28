@@ -15,7 +15,17 @@ import { AgmCoreModule } from '@agm/core';
 import { LoadingComponent } from './components/loading/loading.component';
 import { MapScreenComponent } from './components/map-screen/map-screen.component';
 import { MapViewComponent } from './components/map-view/map-view.component';
-import { FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
+import {
+  FacebookLoginProvider,
+  SocialAuthServiceConfig,
+  SocialLoginModule,
+} from 'angularx-social-login';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { TiendaComponent } from './components/tienda/tienda.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +36,8 @@ import { FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule } fro
     PokeappComponent,
     LoadingComponent,
     MapScreenComponent,
-    MapViewComponent
+    MapViewComponent,
+    TiendaComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,10 +48,15 @@ import { FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule } fro
     BrowserAnimationsModule,
     SocialLoginModule,
     AgmCoreModule.forRoot({
-      apiKey: 'ad87c2843ea242eb8213b17393d17974'
-    })
+      apiKey: 'ad87c2843ea242eb8213b17393d17974',
+    }),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firebase),
   ],
-  providers: [UsuariosService,
+  providers: [
+    UsuariosService,
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
@@ -48,13 +64,12 @@ import { FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule } fro
         providers: [
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider(
-              '1240578866731098'
-            )
-          }
-        ]
+            provider: new FacebookLoginProvider('1240578866731098'),
+          },
+        ],
       } as SocialAuthServiceConfig,
-    }],
-  bootstrap: [AppComponent]
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
