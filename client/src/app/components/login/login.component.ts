@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/Usuario';
-import { FormGroup } from '@angular/forms';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
+import { UntypedFormControl, ReactiveFormsModule } from '@angular/forms';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
@@ -15,9 +15,9 @@ import { SocialAuthService, FacebookLoginProvider, SocialUser } from 'angularx-s
 export class LoginComponent implements OnInit {
 
   user: Usuario[]
-  form: FormGroup = new FormGroup({
-    usuario: new FormControl,
-    password: new FormControl
+  form: UntypedFormGroup = new UntypedFormGroup({
+    usuario: new UntypedFormControl,
+    password: new UntypedFormControl
   })
 
   socialUser: SocialUser;
