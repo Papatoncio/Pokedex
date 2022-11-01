@@ -6,36 +6,35 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  styleUrls: ['./registro.component.css'],
 })
 export class RegistroComponent implements OnInit {
-
   @HostBinding('class') classes = 'row';
   usuario: Usuario = {
     idusuario: 0,
     usuario: '',
     correo: '',
-    password: ''
-  }
+    password: '',
+  };
 
-  constructor(private usuarioService: UsuariosService, private router: Router) { }
+  constructor(
+    private usuarioService: UsuariosService,
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  saveUsuario(){
+  async saveUsuario(): Promise<void> {
     console.log(this.usuario);
-    this.usuarioService.saveUsuario(this.usuario)
-    .subscribe(
-      resp => {
+    this.usuarioService.saveUsuario(this.usuario).subscribe(
+      (resp) => {
         console.log(resp);
-        this.router.navigate(['login'])
+        this.router.navigate(['login']);
         window.location.reload();
       },
-      err => {
+      (err) => {
         console.log(err);
       }
-    )
+    );
   }
-
 }

@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoadScriptsService {
-
-  constructor() { }
+  constructor() {}
 
   public loadScript() {
-    console.log('preparing to load...')
+    console.log('preparing to load...');
     let node = document.createElement('script');
     node.src = 'assets/script.js';
     node.type = 'text/javascript';

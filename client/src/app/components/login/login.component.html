@@ -10,21 +10,49 @@
           <form [formGroup]="form" (ngSubmit)="login()">
             <p>Inicia Sesion en tu PokeCuenta</p>
             <div class="mb-2">
-            <input class="me-1" id="usuario" formControlName="usuario" type="text" name="usuario" placeholder="Usuario" required>
-            <label class="form-label">PokeUsuario</label>
+              <input
+                class="me-1"
+                id="usuario"
+                formControlName="usuario"
+                type="text"
+                name="usuario"
+                placeholder="Usuario"
+                required
+              />
+              <label class="form-label">PokeUsuario</label>
             </div>
             <div class="form-outline mb-2">
-            <input id="password" formControlName="password" type="password" placeholder="Contraseña" name="password" required>
-            <label class="form-label">PokeContraseña</label>
+              <input
+                id="password"
+                formControlName="password"
+                type="password"
+                placeholder="Contraseña"
+                name="password"
+                required
+              />
+              <label class="form-label">PokeContraseña</label>
             </div>
             <div class="text-center pt-1 mb-2 pb-1">
-              <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" title="Ingresar" name="Ingresar">PokeIniciar Sesion</button>
-              <br/>
+              <button
+                class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                type="submit"
+                title="Ingresar"
+                name="Ingresar"
+              >
+                PokeIniciar Sesion
+              </button>
+              <br />
             </div>
-            <div style="text-align: center;" *ngIf="!isLogin">
-              <button type="button" class="loginBtn loginBtn--facebook" (click)="loginWithFacebook()">Login con Facebook</button>
+            <div style="text-align: center" *ngIf="!isLogin">
+              <button
+                type="button"
+                class="loginBtn loginBtn--facebook"
+                (click)="loginWithFacebook()"
+              >
+                Login con Facebook
+              </button>
             </div>
-        </form>
+          </form>
         </div>
       </div>
       <div class="col-lg-6 d-flex">
