@@ -7,11 +7,6 @@ import { MapScreenComponent } from './components/map-screen/map-screen.component
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: '/login',
-    pathMatch: 'full',
-  },
-  {
     path: 'pokeapp',
     component: PokeappComponent,
   },
