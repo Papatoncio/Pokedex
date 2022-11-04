@@ -1,16 +1,14 @@
-<div class="card border-primary mb-3" style="max-width: 20rem;" *ngFor="let producto of productos";>
-    <div class="card-header">{{producto.nomproducto}}</div>
-    <div class="card-body">
-        <h4 class="card-title">Primary card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+<div class="col-md-4" *ngFor="let producto of productos">
+  <div class="card text-center">
+    <div
+      class="card-header bg-dark text-white d-flex justify-content-between aling-items-center"
+    >
+      {{ producto.nomproducto }}
     </div>
-</div>
-
-<div class="card border-primary mb-3" style="max-width: 20rem;">
-    <div class="card-header">Header</div>
+    <img [src]="producto.imagen" class="card-body" />
     <div class="card-body">
-      <h4 class="card-title">Primary card title</h4>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p>{{ producto.precio }}</p>
     </div>
   </div>
+  <br />
+</div>
