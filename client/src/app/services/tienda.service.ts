@@ -10,8 +10,8 @@ export class TiendaService {
 
   producto:Producto[];
 
-  API_Uri = 'http://localhost:3100/api/products';
-  API_Url = 'http://localhost:3100/api';
+  API_Uri = 'http://localhost:3000/api/products';
+  API_Url = 'http://localhost:3000/api';
 
   constructor(private http: HttpClient) { }
 

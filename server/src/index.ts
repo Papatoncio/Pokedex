@@ -3,6 +3,7 @@ import indexRoutes from './routes/indexRoutes';
 import usuarioRoutes from './routes/usuarioRoutes';
 import morgan from 'morgan';
 import cors from 'cors';
+import productsRoutes from './routes/productsRoutes';
 
 console.log('ESTA JALANDO');
 
@@ -25,8 +26,8 @@ class Server {
     }
 
     routes(): void{
-        this.app.use(indexRoutes);
         this.app.use('/api/usuarios', usuarioRoutes);
+        this.app.use('/api/productos', productsRoutes);
     }
 
     start(): void{
