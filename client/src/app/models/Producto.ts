@@ -3,4 +3,6 @@ export interface Producto {
     nomproducto: string;
     marca: string;
     precio: number;
+    imagen: String;
+    stock: number;
 }
