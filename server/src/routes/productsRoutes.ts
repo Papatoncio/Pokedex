@@ -9,10 +9,15 @@ class ProductsRoutes {
   }
 
   config(): void {
+    //Obtener Productos (METODO GET)
     this.router.get("/", productsController.list);
+    //Obtener Productos por ID
     this.router.get("/:id", productsController.getOne);
+    //Crear Productos (METODO POST)
     this.router.post("/", productsController.create);
+    //Eliminar Productos (METODO DELETE)
     this.router.delete("/:id", productsController.delete);
+    //Actualizar Productos (METODO PUT)
     this.router.put("/:id", productsController.update);
   }
 }
