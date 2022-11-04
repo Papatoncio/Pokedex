@@ -1,14 +1,16 @@
-<div class="col-md-4" *ngFor="let producto of productos">
-  <div class="card text-center">
-    <div
-      class="card-header bg-dark text-white d-flex justify-content-between aling-items-center"
-    >
-      {{ producto.nomproducto }}
-    </div>
-    <img [src]="producto.imagen" class="card-body" />
-    <div class="card-body">
-      <p>{{ producto.precio }}</p>
+<div class="row row-cols-1 row-cols-4 g-4">
+  <div class="col" *ngFor="let producto of productos">
+    <div>
+      <div class="card border-dark mb-2 m-auto" style="width: 18rem">
+        <div class="card-header">
+          {{ producto.nomproducto }}
+        </div>
+        <div class="card-body text-center">
+          <img [src]="producto.imagen" alt="" class="img-fluid rounded-4" />
+          <p class="mt-2">Precio ${{ producto.precio }} MXN</p>
+          <button type="submit" class="btn btn-success">Agregar</button>
+        </div>
+      </div>
     </div>
   </div>
-  <br />
 </div>
