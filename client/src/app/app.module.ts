@@ -20,6 +20,8 @@ import {
   SocialAuthServiceConfig,
   SocialLoginModule,
 } from 'angularx-social-login';
+import { TiendaComponent } from './components/tienda/tienda.component';
+import { TiendaService } from './services/tienda.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import {
     LoadingComponent,
     MapScreenComponent,
     MapViewComponent,
+    TiendaComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ import {
   ],
   providers: [
     UsuariosService,
+    TiendaService,
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
